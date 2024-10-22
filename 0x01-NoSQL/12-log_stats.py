@@ -23,10 +23,12 @@ def log_start():
         counts_method = collection_caller.count_documents({"method": method})
         print(f"\tmethod {method}: {counts_method}")
 
-    status_check = collection_caller.count_documents({"method": "GET", "path": "/status"})
+    status_check = collection_caller.count_documents({
+        "method": "GET", "path": "/status"
+        })
 
     print(f"{status_check} status check")
 
 
 if __name__ == "__main__":
-    log_start()    
+    log_start()
