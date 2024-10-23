@@ -3,6 +3,7 @@
 
 import redis
 from uuid import uuid4
+from functools import wraps
 from typing import Any, Callable, Optional, Union
 
 
@@ -42,3 +43,12 @@ class Cache:
     def get_int(self, data: bytes) -> int:
         ''' conversion function to int from bytes '''
         return int(data)
+
+    def count_calls(self, method: Callable) -> Callable:
+        ''' counts the Cache class method TASK 2'''
+        @wraps(method)
+        def wrapper(self: Any, *args, **kwargs) -> str:
+            ''' this defines the wrapper method '''
+            self.redis.incr(method.__qualname__)
+            return method(self, *args, **kwargs)
+        return wrapper
