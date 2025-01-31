@@ -1,11 +1,3 @@
--- SQL script that creates a table users
--- attributes: id, integer, never null, 
--- auto increment and primary key
--- email, string (255 characters), never null and unique
--- name, string (255 characters)
-
-CREATE TABLE IF NOT EXISTS users (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    name VARCHAR(255)
-);
+version https://git-lfs.github.com/spec/v1
+oid sha256:ea7998db016e18890eea7179dc91b72fff6e311fe1a7908b060c7246b32566c4
+size 355

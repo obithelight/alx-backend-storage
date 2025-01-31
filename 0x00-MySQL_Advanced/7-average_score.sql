@@ -1,18 +1,3 @@
--- a script to write a stored procedure A student's 
--- new adjustment is added using AddBonus.
-drop procedure IF EXISTS ComputeAverageScoreForUser;
-
-DELIMITER $$
-
-CREATE PROCEDURE ComputeAverageScoreForUser(
-	IN user_id INT
-)
-BEGIN
-	UPDATE users
-   	SET average_score=(SELECT AVG(score) FROM corrections
-			     WHERE corrections.user_id=user_id)
-	WHERE id = user_id;
-
-END$$
-
-DELIMITER ;
+version https://git-lfs.github.com/spec/v1
+oid sha256:0a8019ed44aaf986471b378df4c5c61c719575c257f3a62172dcac0ac056483f
+size 389

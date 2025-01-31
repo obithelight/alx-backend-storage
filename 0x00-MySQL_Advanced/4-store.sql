@@ -1,17 +1,3 @@
--- SQL script that creates a trigger.
--- The trigger decreases the quantity of an item after adding a new order.
--- Quantity in the table items can be negative.
-
-DROP TRIGGER IF EXISTS update_items_quantity;
-DELIMITER $$
-
-CREATE TRIGGER update_items_quantity
-AFTER INSERT ON orders
-FOR EACH ROW
-BEGIN
-    UPDATE items
-    SET quantity = quantity - NEW.number
-    WHERE name = NEW.item_name;
-END$$
-
-DELIMITER ;
+version https://git-lfs.github.com/spec/v1
+oid sha256:54f83ee595fdc1265858c07a2ca739de2cf7b1ee462818fc4ce07b4af38d5db6
+size 410

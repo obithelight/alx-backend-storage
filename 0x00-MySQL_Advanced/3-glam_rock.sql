@@ -1,11 +1,3 @@
--- SQL script that lists all bands with Glam rock
--- as their main style, ranked by their longevity
--- Requirements: Import table dump: metal_bands.sql.zip
--- Column names: band_name and lifespan 
--- (in years until 2022 - use 2022 instead of YEAR(CURDATE()))
--- Yse attributes formed and split for computing the lifespan
-
-SELECT band_name, (COALESCE(split, 2022) - formed) AS lifespan
-FROM metal_bands
-WHERE style LIKE '%Glam rock%'
-ORDER BY lifespan DESC
+version https://git-lfs.github.com/spec/v1
+oid sha256:7eff68de67232a6a22e767b839673e1abfea8410885e5f081194c8ac744aab3d
+size 457

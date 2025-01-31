@@ -1,17 +1,3 @@
--- SQL script that creates a trigger
--- The trigger resets the attribute valid_email
--- Only when the email has been changed.
-
-DROP TRIGGER IF EXISTS validate_email;
-DELIMITER $$
-
-CREATE TRIGGER validate_email
-BEFORE UPDATE ON users
-FOR EACH ROW
-BEGIN
-    IF NEW.email != OLD.email THEN
-    SET NEW.valid_email = 0;
-    END IF;
-END$$
-
-DELIMITER ;
+version https://git-lfs.github.com/spec/v1
+oid sha256:02a8f6b9fb2d1a76f3b4f8586bd067874534a263a57c6f584e7a75c20c090eb0
+size 347

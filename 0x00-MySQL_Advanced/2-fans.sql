@@ -1,9 +1,3 @@
--- SQL script that ranks country origins of bands
--- Import table dump: metal_bands.sql.zip
--- Column names must be: origin and nb_fans
--- Your script can be executed on any database
-
-SELECT origin, SUM(fans) AS nb_fans
-FROM metal_bands
-GROUP BY origin
-ORDER BY nb_fans DESC
+version https://git-lfs.github.com/spec/v1
+oid sha256:c8d56195fb801775d0c6d5229231944fea7a25adb2797d3f275dbe0a98d97a49
+size 275
